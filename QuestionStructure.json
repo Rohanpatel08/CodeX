@@ -1,0 +1,89 @@
+
+    "questions\": [{
+        \"type\": \"Coding\",
+        \"title\": \"<Question Title>\",
+        \"question\": \"<Formatted markdown-style problem statement>\",
+        \"examples\": [{
+        \"input\": \"<example input>\",
+        \"output\": \"<expected output>\"
+},
+{
+        \"input\": \"<example input>\",
+        \"output\": \"<expected output>\"
+},
+{
+        \"input\": \"<example input>\",
+        \"output\": \"<expected output>\"
+}
+],
+    \"test_cases\": [{
+        \"input\": \"<input for test>\",
+        \"expected_output\": \"<expected result>\"
+},
+{
+        \"input\": \"<input for test>\",
+        \"expected_output\": \"<expected result>\"
+},
+{
+        \"input\": \"<input for test>\",
+        \"expected_output\": \"<expected result>\"
+}
+],
+        \"answer\": \"<Correct Answer Code with proper formatting and indentation>\",
+        \"difficulty\": \"<Easy|Medium|Hard>\",
+        \"duration\": <number between 1 and 10>,
+        \"Score\": <number between 1 and 5>,
+        \"Skill\": \"<Single skill this question is based on>\",
+        \"Compiler\": [<language ID(s) based on the skill>]
+}
+
+        ⚠️ Return a valid JSON object with no explanation or text outside the JSON.
+
+
+
+{
+  #295 // app/Http/Controllers/QuestionController.php:50
+  +"type": "Coding"
+  +"title": "Longest Substring Without Repeating Characters"
+  +"question": """
+    Given a string, find the length of the longest substring without repeating characters. Implement a function that takes a string as an input and returns the length of the longest substring. 
+    
+    **Example:** 
+    Input: "abcabcbb" 
+    Output: 3 
+    Explanation: The answer is "abc", with the length of 3. 
+    
+    Input: "bbbbb" 
+    Output: 1 
+    Explanation: The answer is "b", with the length of 1. 
+    
+    Input: "pwwkew" 
+    Output: 3 
+    Explanation: The answer is "wke", with the length of 3. Note that the answer must be a substring,
+"pwke" is a subsequence and not a substring.
+    """
+  +"test_cases": array: 3 [
+0 => {#298
+      +"input": ""abcabcbb""
+      +"expected_output": "3"
+}
+    1 => {#311
+      +"input": ""bbbbb""
+      +"expected_output": "1"
+}
+    2 => {#299
+      +"input": ""pwwkew""
+      +"expected_output": "3"
+}
+]
+  +"input_format": "A single string containing only printable ASCII characters."
+  +"output_format": "An integer representing the length of the longest substring without repeating characters."
+  +"constraints": "0 <= s.length <= 5 * 10^4"
+  +"difficulty": "Hard"
+  +"duration": 10
+  +"Score": 5
+  +"Skill": "String Manipulation"
+  +"Compiler": array: 1 [
+0 => 1
+]
+}
