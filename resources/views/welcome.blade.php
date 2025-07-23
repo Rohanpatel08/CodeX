@@ -792,6 +792,13 @@ console.log(sumArray([-1, 1, -2, 2])); // Expected: 0`
         codeEditor.focus();
 
         document.getElementById('generate-question').addEventListener('click', () => {
+            const generateButton = document.getElementById('generate-question');
+            
+            // Show loading state
+            generateButton.disabled = true;
+            generateButton.textContent = 'Generating...';
+            generateButton.style.opacity = '0.7';
+            
             $.ajax({
                 url: '/api/generate-questions',
                 method: 'POST',
@@ -832,6 +839,16 @@ function solve() {
 console.log(solve());`;
                         codeEditor.setValue(starterCode);
                     }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Question generation error:', error);
+                    // You can add error handling here if needed
+                },
+                complete: function() {
+                    // Hide loading state
+                    generateButton.disabled = false;
+                    generateButton.textContent = 'Generate Question';
+                    generateButton.style.opacity = '1';
                 }
             })
         });
